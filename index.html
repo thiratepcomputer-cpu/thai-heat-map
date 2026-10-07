@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thai Heat Map — แผนที่ความร้อนประเทศไทย</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<h1>🇹🇭 Thai Heat Map</h1>
+<p>แผนที่คำนวณดัชนีความร้อนรายจังหวัดจากสภาพอากาศปัจจุบัน</p>
+</section>
+
+<div class="layout">
+<aside>
+<div class="card">
+<h2>📍 ข้อมูลพื้นที่</h2>
+<label for="province">จังหวัด</label>
+<select id="province"><option>กำลังโหลดจังหวัด...</option></select>
+<div id="local"></div>
+<button id="refresh">🔄 อัปเดตข้อมูลอากาศ</button>
+<button id="fit" class="secondary">🗺️ แสดงประเทศไทยทั้งหมด</button>
+<div class="status" id="status">กำลังโหลดขอบเขตจังหวัด...</div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<h3>🔥 ผลการคำนวณ</h3>
+<div class="metric" id="hi">-- °C</div>
+<div id="level" class="badge yellow">รอข้อมูล</div>
+<p id="advice" class="small">เลือกจังหวัดเพื่อดูอุณหภูมิ ความชื้น และดัชนีความร้อน</p>
+<div class="legend">
+<span class="green">ปกติ</span><span class="yellow">เริ่มร้อน</span><span class="orange">ร้อนจัด</span><span class="red">อันตราย</span>
+</div>
+</div>
+</aside>
+
+<main class="card">
+<h2 style="margin-top:0">🗺️ แผนที่ความร้อน 77 จังหวัด</h2>
+<div id="map"></div>
+<p class="source">ข้อมูลอากาศล่าสุดจาก Open-Meteo โดยคำนวณจากจุดกึ่งกลางของขอบเขตจังหวัด ส่วนขอบเขตจังหวัดใช้ GeoJSON 77 จังหวัดจาก OpenGISData-Thailand</p>
+</main>
+</div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
